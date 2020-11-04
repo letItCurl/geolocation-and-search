@@ -1,6 +1,6 @@
 <div>
-  <h3><%= link_to transaction.id, transaction_path(transaction) %></h3>
-  <p><%= transaction.city %></p>
-  <p><%= transaction.price %></p>
+  <h3><%= link_to "LINK: #{transaction.id}", transaction_path(transaction) %></h3>
+  <p> adrress: <%= transaction.address %></p>
+  <p> price: <%= transaction.price %></p>
 </div>
 <hr>

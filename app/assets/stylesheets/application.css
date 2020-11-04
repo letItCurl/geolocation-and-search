@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ #map{
+   height: 500px;
+   width: 400px;
+ }
+ 
+ .container{
+   display: flex;
+   justify-items: start;
+   justify-content: center;
+   flex-direction: row;
+ }

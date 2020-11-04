@@ -1,3 +1,12 @@
 <h1>Transaction list </h1>
 
-<%= render @transactions %>
+<div class="container"> 
+  <div>
+    <hr>
+    <%= render @transactions %>
+  </div>
+  <div>
+    <%= tag.div nil, id: "map" %>
+  </div>
+</div>
+

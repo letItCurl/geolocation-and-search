@@ -16,5 +16,12 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-require("packs/gmaps")
-require("packs/maps")
+// yes but you need to mount the GMaps obj into the window object
+//require("packs/gmaps")
+//require("packs/maps")
+//require("packs/googleMaps")
+
+import "packs/maps"
+import 'packs/gmaps';
+import GMaps from 'packs/gmaps';
+window.GMaps = GMaps;
