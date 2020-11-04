@@ -16,11 +16,12 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
+// is the code below correct for webpack ?
 // yes but you need to mount the GMaps obj into the window object
 //require("packs/gmaps")
 //require("packs/maps")
-//require("packs/googleMaps")
 
+// do this as mentinned in the comments
 import "packs/maps"
 import 'packs/gmaps';
 import GMaps from 'packs/gmaps';
