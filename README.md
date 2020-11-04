@@ -1,24 +1,30 @@
-# README
+```bash
+rake geocode:all CLASS=Transaction SLEEP=0.25 BATCH=100
+```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```bash
+rails generate geocoder:config
+```
 
-Things you may want to cover:
+```ruby
+reverse_geocoded_by :latitude, :longitude do |obj,results|
+  if geo = results.first
+    obj.city    = geo.city
+    obj.zipcode = geo.postal_code
+    obj.country = geo.country_code
+  end
+end
+after_validation :reverse_geoc
+```
 
-* Ruby version
+```ruby
+sw_corner = [40.71, 100.23]
+ne_corner = [36.12, 88.65]
+Venue.within_bounding_box(sw_corner, ne_corner)
+```
 
-* System dependencies
+Geocoding, Geolocation and Search with Geocoder + Google Maps APIs :
+https://gorails.com/episodes/geolocation-and-search-with-geocoder
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+How to use Google Maps and Markers:
+https://gorails.com/episodes/google-maps-and-markers
