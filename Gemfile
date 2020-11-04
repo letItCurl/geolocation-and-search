@@ -58,3 +58,5 @@ gem "devise", "~> 4.7"
 gem "geocoder", "~> 1.6"
 
 gem "figaro", "~> 1.2"
+
+gem "kaminari", "~> 1.2"

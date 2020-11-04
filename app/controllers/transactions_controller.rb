@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   before_action :set_user, only: [:show]
 
   def index
-    @transactions = Transaction.all
+    @transactions = Transaction.page(params[:page]).per(20)
   end
 
   def show
