@@ -60,3 +60,5 @@ gem "geocoder", "~> 1.6"
 gem "figaro", "~> 1.2"
 
 gem "kaminari", "~> 1.2"
+
+gem "searchkick", "~> 4.4"
