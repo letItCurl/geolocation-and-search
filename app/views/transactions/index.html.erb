@@ -1,5 +1,8 @@
 <h1>Transaction list </h1>
-
+<%= form_with(url: transactions_path, local: true, method: :get) do |f| %>
+  <%= f.text_field :near, placeholder: "search" %>
+  <%= f.submit %>
+<% end  %>
 <div class="container"> 
   <div>
     <%= paginate @transactions %>
@@ -7,7 +10,8 @@
     <%= render @transactions %>  
   </div>
   <div>
-    <%= tag.div nil, id: "map", data: {transactions: @transactions.to_json(methods: [:address])} %>
+    <%= link_to 'redo-search', '#', id: "redo-search" %>
+    <%= tag.div nil, id: "map", data: {transactions: @transactions.to_json(methods: [:address]), l: params[:l]} %>
   </div>
 </div>
 

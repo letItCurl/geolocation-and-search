@@ -13,8 +13,6 @@ document.addEventListener("turbolinks:load", function(){
   window.transactions = transactions
   window.map = map
 
-  var bounds = new google.maps.LatLngBounds();
-
   transactions.forEach(element => {
     if(!element.latitude && !element.longitude) return; 
     var marker = map.addMarker({
@@ -25,9 +23,23 @@ document.addEventListener("turbolinks:load", function(){
         content: `<p><a href="/transactions/${element.id}">${element.address}</a></p>`
       }
     });
-
-    bounds.extend(marker.position)
   });
 
-  map.fitBounds(bounds)
+  var l = document.querySelector("#map").dataset.l
+  if(l){
+    var latlngs   = l.split(',');
+    var southWest = new google.maps.LatLng(latlngs[0],latlngs[1])
+    var northEast = new google.maps.LatLng(latlngs[2],latlngs[3])
+    var bounds    = new google.maps.LatLngBounds(southWest, northEast)
+    map.fitBounds(bounds, 0)
+  } else {
+    map.fitZoom()
+  }
+
+  document.querySelector("#redo-search").addEventListener("click", function(e) {
+    e.preventDefault();
+    var bounds = map.getBounds();
+    var location = bounds.getSouthWest().toUrlValue() + "," + bounds.getNorthEast().toUrlValue();
+    Turbolinks.visit(`/transactions?l=${location}`)
+  })
 })
