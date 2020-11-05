@@ -33,6 +33,20 @@ ne_corner = [36.12, 88.65]
 Venue.within_bounding_box(sw_corner, ne_corner)
 ```
 
+we used searchkick to quey into our elastic search instance:
+(don't forget to increase ram for docker in mac)
+```bash
+docker-compose up
+```
+
+to index:
+```ruby
+Model.reindex
+# and it does the work
+```
+
+searchkick really does more than a simple client for elastic search, it makes query easy.
+
 ## FROM
 
 Chris GoRails videos ::
