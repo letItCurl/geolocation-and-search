@@ -8,8 +8,7 @@
     <%= render partial: 'list'%>
   </div>
   <div>
-    <%= link_to 'redo-search', '#', id: "redo-search" %>
-    <%= tag.div nil, id: "map", data: {transactions: @transactions.to_json(methods: [:address]), l: params[:l]} %>
+    <%= tag.div nil, id: "map" %>
   </div>
 </div>
 

@@ -1,7 +1,9 @@
 <h1>Transaction id: <%= @transaction.id %></h1>
 <hr>
-<h3><%= link_to "LINK: #{@transaction.id}", transaction_path(@transaction) %></h3>
-    <p> adrress: <%= @transaction.address %></p>
-    <p> price: <%= @transaction.price %></p>
+<h3>
+    <%= link_to "LINK: #{@transaction.id}", transaction_path(@transaction) %>
+</h3>
+<p> adrress: <%= @transaction.address %></p>
+<p> price: <%= @transaction.price %></p>
 
 <%= link_to 'listing', root_path %>

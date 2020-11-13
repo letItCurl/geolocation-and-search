@@ -1,5 +1,5 @@
-<div id='transaction_list'>
+<%=tag.div id: 'transaction_list', data: {transactions: @transactions.to_json(methods: [:address]), l: params[:l]} do %>
   <%= paginate @transactions, remote: true %>
   <hr>
   <%= render @transactions %>  
-</div>
+<%end%>

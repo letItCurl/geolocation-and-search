@@ -5,7 +5,7 @@ class TransactionsController < ApplicationController
   def index
     per_page = 10
     @transactions = if params[:l]
-                        #sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
+                        sw_lat, sw_lng, ne_lat, ne_lng = params[:l].split(",")
                         #center = Geocoder::Calculations.geographic_center([[sw_lat, sw_lng], [ne_lat, ne_lng]])
                         #distance = Geocoder::Calculations.distance_between(center, [sw_lat, sw_lng])
                         #box = Geocoder::Calculations.bounding_box(center, distance)
