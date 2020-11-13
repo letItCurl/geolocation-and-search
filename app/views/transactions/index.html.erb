@@ -5,9 +5,7 @@
 <% end  %>
 <div class="container"> 
   <div>
-    <%= paginate @transactions %>
-    <hr>
-    <%= render @transactions %>  
+    <%= render partial: 'list'%>
   </div>
   <div>
     <%= link_to 'redo-search', '#', id: "redo-search" %>

@@ -1,6 +1,8 @@
 <div>
-  <h3><%= link_to "LINK: #{transaction.id}", transaction_path(transaction) %></h3>
-  <p> adrress: <%= transaction.address %></p>
-  <p> price: <%= transaction.price %></p>
+  <% @transactions.each do |tr| %>
+    <h3><%= link_to "LINK: #{tr.id}", transaction_path(tr) %></h3>
+    <p> adrress: <%= tr.address %></p>
+    <p> price: <%= tr.price %></p>
+  <% end %>
 </div>
 <hr>

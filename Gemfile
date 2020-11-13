@@ -62,3 +62,5 @@ gem "figaro", "~> 1.2"
 gem "kaminari", "~> 1.2"
 
 gem "searchkick", "~> 4.4"
+
+gem "jquery-rails", "~> 4.4"
